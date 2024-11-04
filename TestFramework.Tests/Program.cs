@@ -9,7 +9,10 @@ using System.Diagnostics;
 Console.WriteLine(Directory.GetCurrentDirectory());
 
 var testrunner = new Process();
-testrunner.StartInfo = new ProcessStartInfo("TestFramework.exe");
-testrunner.StartInfo.WorkingDirectory = Path.Combine(Directory.GetCurrentDirectory(), "/Users/igus/Source/Repos/SMCD/smcd-csharp-testframework/TestFramework/bin/Debug/net8.0");
+testrunner.StartInfo.FileName = "TestFramework.exe";
+testrunner.StartInfo.WorkingDirectory = Path.Combine(
+    Directory.GetCurrentDirectory(), 
+    "TestFramework","bin","Debug","net8.0"
+);
 
 testrunner.Start();
